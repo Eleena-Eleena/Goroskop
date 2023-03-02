@@ -1,0 +1,122 @@
+﻿<Window x:Class="Goroskop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Goroskop"
+        mc:Ignorable="d"
+        Title="Гороскоп" Height="800" Width="1130" Background="Transparent">
+    <!--WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True"-->
+    <Border Background="#272537">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Style="{StaticResource mainTextBlockStyle}" Text="Гороскопы"></TextBlock>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+                <RadioButton Style="{StaticResource MenuButton}" Content="Славянский гороскоп" Checked="RadioButton_Checked"></RadioButton>
+                <RadioButton Style="{StaticResource MenuButton}" Content="Японский гороскоп" Checked="RadioButton_Checked_1"></RadioButton>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="0"
+                        Name="StackPanelMain">
+                <TextBlock Style="{StaticResource mainTextBlockStyle}" Text="Выберете гороскоп" Name="TextBlockMain" Margin="0,25,0,0"/>
+            </StackPanel>
+
+
+            <Grid Grid.Column="1" Grid.Row="1" Background="#0F0C24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.ColumnSpan="2" Style="{StaticResource headerTextBlockStyle}" Text="Выбор по дате" Name="TextBoxheardBirth" Visibility="Collapsed"/>
+
+                <TextBox Grid.Column="0" Grid.Row="1"  Style="{StaticResource TextBoxStyle}" 
+                          Name="TextBoxSlBirth" 
+                          Visibility="Collapsed"></TextBox>
+
+                <TextBox  Grid.Column="0" Grid.Row="1"  Style="{StaticResource TextBoxStyle1}" 
+                          Name="TextBoxSlBirthY" 
+                          Visibility="Hidden"></TextBox>
+
+                <Button Grid.Column="1" Grid.Row="1"  Style="{StaticResource ButtonStyle}"
+                        Name="BtResult" Click="Button_Click" Visibility="Collapsed">
+
+                </Button>
+
+                <TextBlock Grid.Row="2" Grid.ColumnSpan="3"  Style="{StaticResource headerTextBlockStyle}" 
+                           Text="Результат"
+                           Name="TextBlockTitleResult"
+                           Visibility="Collapsed"></TextBlock>
+
+                <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource contentTextBlockStyle}" 
+                           Name="TextBlockResult"
+                           Text="" 
+                           TextWrapping="Wrap">
+
+                </TextBlock>
+
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="Выбор по месяцу" Style="{StaticResource headerTextBlockStyle}" Name="TextBlockheaderMounth" Visibility="Collapsed" ></TextBlock>
+
+                <Button  Grid.Row="1" Grid.Column="3" Content="Выберите месяц   ˅" Style="{StaticResource BtStyleMonth}" xml:space="preserve" Click="Button_Click_1" Name="ButtonMouth" Visibility="Collapsed"> </Button>
+
+
+                <Grid Grid.Column="3" Grid.Row="2"  Grid.RowSpan="4" Name="GridMounth" Width="200" Height="330" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" Margin="120,0,0,0">
+                    <Polygon Fill="#2C2B35" StrokeThickness="2" Stroke="Azure"
+                             Points="0,8,
+                             0,295,
+                             200,295,
+                             200,8,
+                             40,8,
+                             29,0,
+                             21,8"/>
+
+                    <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Январь" Click="Button_ClickJanuary"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Февраль" Click="Button_ClickFebruary"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}"  
+                                Content="Март" Click="Button_ClickMarch"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}"
+                                Content="Апрель" Click="Button_ClickApril"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Май" Click="Button_ClickMay"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Июнь" Click="Button_ClickJune"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Июль" Click="Button_ClickJuly"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Август" Click="Button_ClickAugust"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Сентябрь" Click="Button_ClickSeptember"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Октябрь" Click="Button_ClickOctomber"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Ноябрь" Click="Button_ClickNovember"></Button>
+                        <Button Style="{StaticResource BtStyleMonth1}" 
+                                Content="Декабрь" Click="Button_ClickDecember"></Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

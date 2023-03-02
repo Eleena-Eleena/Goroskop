@@ -1,0 +1,231 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic">
+
+    <Style TargetType="TextBlock" x:Key="mainTextBlockStyle">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#cfcfcf"/>
+    </Style>
+    <Style TargetType="TextBlock" BasedOn="{StaticResource mainTextBlockStyle}" x:Key="headerTextBlockStyle">
+        <Setter Property="FontSize" Value="18"/>
+        
+    </Style>
+
+
+    <Style TargetType="TextBlock" BasedOn="{StaticResource mainTextBlockStyle}" x:Key="contentTextBlockStyle">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10,0,10,15"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="10,10,20,0"/>
+        <Setter Property="Foreground" Value="#cfcfcf"/>
+    </Style>
+        
+    <Style TargetType="ComboBoxItem" x:Key="ComboBoxItemStyle">
+        <Setter Property="Background" Value="#353340"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#0F0C24"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="BtStyleMonth">
+        <Setter Property="Background" Value="#353340"/>
+        <Setter Property="Foreground" Value="#cfcfcf"/>
+        <Setter Property="Width" Value="140"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="20,00,0,0"/>
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource BtStyleMonth}" x:Key="BtStyleMonth1">
+        <Setter Property="Width" Value="190"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Margin" Value="5,3,5,0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+
+    </Style>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    <!--RadioButton кнопка-->
+
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}" 
+           TargetType="{x:Type RadioButton}" 
+           x:Key="MenuButton">
+        <Style.Setters>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid VerticalAlignment="Stretch" 
+                          HorizontalAlignment="Stretch" 
+                          Background="{TemplateBinding Background}">
+
+                            <TextBlock Text="{TemplateBinding Property=Content}" 
+                                   VerticalAlignment="Center"
+                                       Margin="30,30,0,10"
+                                       Foreground="#cfcfcf"
+                                       FontSize="18">
+                            </TextBlock>
+                        
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#22202f"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Textbox-->
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="TextBoxStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="10"
+                            Background="#353340"
+                            Width="200" Height="50"
+                            HorizontalAlignment="Left"
+                            Margin="30,0,0,0">
+                        <Grid>
+                            <Rectangle StrokeThickness="1"></Rectangle>
+                            <TextBox Margin="1"
+                                     Text="{TemplateBinding Text}"
+                                     Background="Transparent"
+                                     HorizontalAlignment="Left"
+                                     Padding="10,15,10,10"
+                                     BorderThickness="0"
+                                     Foreground="#cfcfcf"
+                                     x:Name="Birth"
+                                     FontSize="14">
+                            </TextBox>
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Введите день и месяц"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,0,0,0"
+                                       FontSize="14"
+                                       Foreground="DarkGray">
+                                
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=Birth}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"></Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="TextBoxStyle1">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="10"
+                            Background="#353340"
+                            Width="200" Height="50"
+                            HorizontalAlignment="Left"
+                            Margin="30,0,0,0">
+                        <Grid>
+                            <Rectangle StrokeThickness="1"></Rectangle>
+                            <TextBox Margin="1"
+                                     Text="{TemplateBinding Text}"
+                                     Background="Transparent"
+                                     HorizontalAlignment="Left"
+                                     Padding="10,15,10,10"
+                                     BorderThickness="0"
+                                     Foreground="#cfcfcf"
+                                     x:Name="BirthY"
+                                     FontSize="14">
+                            </TextBox>
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Введите год"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="10,0,0,0"
+                                       FontSize="14"
+                                       Foreground="DarkGray">
+
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=BirthY}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"></Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Button-->
+
+    <Style TargetType="{x:Type Button}"
+           x:Key="ButtonStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="#353340"
+                            CornerRadius="10"
+                            Width="100" Height="50"
+                            HorizontalAlignment="Left"
+                            Margin="0,0,0,0"
+                            BorderThickness="0">
+                        <Grid>
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Узнать"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="14"
+                                       Foreground="#cfcfcf"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#353350"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
